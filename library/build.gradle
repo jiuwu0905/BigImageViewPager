@@ -4,7 +4,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven'
 
 def POM_NAME = "bigImageViewPager"
-def POM_VERSION = "1.0.0"
+def POM_VERSION = "1.0.2"
 def POM_ARTIFACTID = "bigImageViewPager"
 def POM_DESCRIPTION = "== bigImageViewPager =="
 

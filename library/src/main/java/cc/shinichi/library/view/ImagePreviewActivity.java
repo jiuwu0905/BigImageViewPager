@@ -372,8 +372,20 @@ public class ImagePreviewActivity extends AppCompatActivity implements Handler.C
         return 0;
     }
 
+
+    private String wrapperUrl(String url){
+        int indexOf = url.lastIndexOf("&msgId");
+        String realUrl = url;
+        if(indexOf > 0){
+            realUrl = url.substring(0,indexOf);
+        }
+        return realUrl;
+    }
+
+
     private boolean checkCache(String url) {
-        File cacheFile = ImageLoader.getGlideCacheFile(context, url);
+        String realUrl = wrapperUrl(url);
+        File cacheFile = ImageLoader.getGlideCacheFile(context, realUrl);
         if (cacheFile != null && cacheFile.exists()) {
             gone();
             return true;
